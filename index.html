@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💌 One Question</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .maybe {
+      background: #eee;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1 id="title">💌 Hi, you’ve been selected</h1>
+    <p id="text">This page exists for one reason only.</p>
+
+    <button class="yes" onclick="nextStep()">Okay…?</button>
+
+    <div id="question" class="hidden">
+      <h1>Will you be my Valentine?</h1>
+      <p>I could’ve sent a text.<br>I chose ✨ creativity ✨ instead.</p>
+
+      <button class="yes" onclick="yes()">💖 Yes</button>
+      <button class="maybe" onclick="convince()">😏 I need convincing</button>
+    </div>
+
+    <p id="response" class="hidden"></p>
+  </div>
+
+  <script>
+    function nextStep() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("question").classList.remove("hidden");
+    }
+
+    function yes() {
+      document.getElementById("question").classList.add("hidden");
+      const r = document.getElementById("response");
+      r.innerHTML = "Knew it 😌💘<br>You have excellent taste.";
+      r.classList.remove("hidden");
+    }
+
+    function convince() {
+      document.getElementById("response").innerHTML =
+        "Fair.<br><br>Reasons to say yes:<br>• I’m thoughtful<br>• I made this<br>• I probably like you more than my maple latte ☕🐈‍⬛";
+      document.getElementById("response").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
