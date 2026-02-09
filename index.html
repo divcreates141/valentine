@@ -58,12 +58,13 @@
   </style>
 </head>
 
-<body>
-  <div class="card">
-    <h1 id="title">💌 Hi, I have a huge crush on you, and think you're adorable...🥺</h1>
-    <p id="text">I think that you're sweet, intelligent, have a nice bum, and you smell good ☺️.</p>
-
-    <button class="yes" onclick="nextStep()">Okay…?</button>
+<div id="crushMessage">
+  <h1>💌 Hi, I have a huge crush on you, and think you're adorable...</h1>
+  <p>
+    I think that you're sweet 🍭, intelligent 🧠, and have a nice bum🍑,
+    and you smell good 😊.
+  </p>
+</div>
 
     <div id="question" class="hidden">
       <h1>Will you be my Valentine? 💋 </h1>
@@ -91,7 +92,7 @@
 
     function convince() {
       document.getElementById("response").innerHTML =
-        "Fair.<br><br>Reasons to say yes:<br>• I’m thoughtful<br>• I made this<br>• I probably like you more than my maple latte ☕🐈‍⬛";
+        "Fair.<br><br>Reasons to say yes:<br>• I’m cute <br>• I made this<br>• I like you more than maple latter" <br>;
       document.getElementById("response").classList.remove("hidden");
     }
   </script>
