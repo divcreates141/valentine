@@ -6,7 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    <body>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 420px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .maybe {
+      background: #eee;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
   <div class="card">
 
     <div id="crushMessage">
@@ -15,7 +68,6 @@
         I think that you're sweet 🍭, intelligent 🧠, have a nice bum 🍑,
         and you smell good 😊.
       </p>
-
       <button class="yes" onclick="nextStep()">Okay…?</button>
     </div>
 
@@ -25,51 +77,6 @@
         I could have been basic but…<br>
         I chose modern day romance instead 💋
       </p>
-
-      <button class="yes" onclick="yes()">💖 Yes</button>
-      <button class="maybe" onclick="convince()">I mayyyyy need convincing 😏</button>
-    </div>
-
-    <p id="response" class="hidden"></p>
-
-  </div>
-</body>
-  <script>
-    function nextStep() {
-      document.getElementById("crushMessage").classList.add("hidden");
-      document.getElementById("question").classList.remove("hidden");
-    }
-
-    function yes() {
-      document.getElementById("question").classList.add("hidden");
-      const r = document.getElementById("response");
-      r.innerHTML = "YAY!! 😌💘<br>You have excellent taste 🥵";
-      r.classList.remove("hidden");
-    }
-
-    function convince() {
-      const r = document.getElementById("response");
-      r.innerHTML =
-        "Fair 😏<br><br>Reasons to say yes:<br>• I’m cute<br>• I made this<br>• I like you more than a maple latte ☕🐈‍⬛";
-      r.classList.remove("hidden");
-    }
-  </script>
-</body>
-  <div class="card">
-
-    <div id="crushMessage">
-      <h1>💌 Hi, I have a huge crush on you, and think you're adorable...</h1>
-      <p>
-        I think that you're sweet 🍭, intelligent 🧠, have a nice bum 🍑,
-        and you smell good 😊.
-      </p>
-
-      <button class="yes" onclick="nextStep()">Okay…?</button>
-    </div>
-
-    <div id="question" class="hidden">
-      <h1>Will you be my Valentine? 💋</h1>
-      <p>I could have been basic but…<br>I chose modern day romance instead 💋</p>
 
       <button class="yes" onclick="yes()">💖 Yes</button>
       <button class="maybe" onclick="convince()">I mayyyyy need convincing 😏</button>
